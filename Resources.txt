@@ -1,0 +1,4 @@
+GitHub: https://github.com/DataTalksClub/llm-zoomcamp
+YouTube:
+  Introductory workshop: https://www.youtube.com/watch?v=nMrGK5QgPVE&list=PL3MmuxUbc_hKiIVNf7DeEt_tGjypOYtKV&index=3
+  Playlist: https://www.youtube.com/watch?v=Q75JgLEXMsM&list=PL3MmuxUbc_hIB4fSqLy_0AfTjVLpgjV3R

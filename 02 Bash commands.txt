@@ -1,0 +1,32 @@
+# install and start ollama
+2024 LLM Zoomcamp/0 RAG Workshop/Bash commands.txt
+
+ollama start
+
+# download and run a small LLM on a local machine without a GPU
+ollama run phi3
+
+# run it in docker
+docker run -it \
+    -v ollama:/root/.ollama \
+    -p 11434:11434 \
+    --name ollama \
+    ollama/ollama
+
+# get the list of containers
+docker ps
+
+# get inside the container
+docker exec -it ollama bash
+
+# pull the LLM model (this only needs to be done once, it will subsequently load
+# with the docker container)
+ollama pull phi3
+
+# create a Docker compose file
+docker-compose up
+docker ps
+docker exec -it ollama bash
+ollama pull phi3
+
+

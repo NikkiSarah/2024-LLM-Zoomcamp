@@ -1,0 +1,32 @@
+# install a virtual environment
+pip install pipenv
+pipenv install tqdm openai elasticsearch cohere python-dotenv
+# and activate it
+source /home/codespace/.local/share/virtualenvs/0_RAG_Workshop-Y-8dc-rB/bin/activate
+
+# create a copy of the .env file callled .envrc and add it to .gitignore
+sudo apt update
+sudo apt install direnv
+cd "2024 LLM Zoomcamp"
+direnv hook bash >> ~/.bashrc
+direnv allow
+
+# run elasticsearch with docker
+docker run -it \
+    --rm \
+    --name elasticsearch \
+    -p 9200:9200 \
+    -p 9300:9300 \
+    -e "discovery.type=single-node" \
+    -e "xpack.security.enabled=false" \
+    docker.elastic.co/elasticsearch/elasticsearch:8.4.3
+# verify elasticsearch is running
+curl http://localhost:9200
+
+# in a new terminal / the Python terminal
+cd "2024 LLM Zoomcamp"/"0 RAG Workshop"
+wget https://github.com/alexeygrigorev/llm-rag-workshop/raw/main/notebooks/documents.json
+head documents.json
+
+streamlit run app.py
+
